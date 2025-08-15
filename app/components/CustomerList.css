@@ -1,0 +1,186 @@
+.headerWrapper {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.title {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: left; 
+  flex-shrink: 0;
+  color: var(--foreground);
+}
+
+.searchInput {
+  width: 280px; 
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid var(--border-color);
+  height: 40px;
+  font-size: 16px;
+  color: var(--foreground);
+  background-color: var(--background);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.th {
+  background-color: var(--border-color);
+  color: var(--foreground);
+  padding: 8px;
+  border: 1px solid var(--border-color);
+  height: 40px;
+  font-size: 17px;
+}
+
+.td {
+  padding: 8px;
+  border: 1px solid var(--border-color);
+  text-align: left;
+  height: 40px;
+  font-size: 17px;
+  color: var(--foreground);
+}
+
+.noData {
+  text-align: center;
+  padding: 16px;
+  font-size: 17px;
+  color: var(--foreground);
+}
+
+.actionsWrapper {
+  display: flex;           
+  gap: 6px;                
+  justify-content: center; 
+  align-items: center;     
+}
+
+.editButton {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 4px 8px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  height: 30px;
+  font-weight: 600;
+  width: 80px;
+  display: flex;
+  font-size: 15px;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+.editButton:hover {
+  background-color: var(--primary-hover);
+}
+
+.deleteButton {
+  background-color: var(--danger-color);
+  color: white;
+  padding: 4px 8px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  height: 30px;
+  font-size: 15px;
+  font-weight: 600;
+  width: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+.deleteButton:hover {
+  background-color: var(--danger-hover);
+}
+
+.container {
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-bottom: 20px;
+}
+
+.sortableHeader {
+  background-color: transparent !important; 
+  color: var(--foreground) !important;                   
+  font-size: 18px;                           
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;                    
+  align-items: center;
+  gap: 6px;
+  border: none;
+  padding: 0;
+}
+
+.sortableHeader .icon {
+  width: 16px;
+  height: 16px;
+  fill: var(--foreground);  
+  flex-shrink: 0;
+}
+
+.sortableHeader {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--foreground);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.sortableHeader .icon {
+  font-size: 16px;
+}
+
+.sortableHeader .faded {
+  color: #666; 
+}
+
+.paginationWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 24px;
+  gap: 12px;
+}
+
+.paginationButton {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 15px;
+  transition: background 0.3s;
+}
+
+.paginationButton:hover:not(:disabled) {
+  background-color: var(--primary-hover);
+}
+
+.paginationButton:disabled {
+  background-color: #555;
+  cursor: not-allowed;
+}
+
+.paginationInfo {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--foreground);
+}

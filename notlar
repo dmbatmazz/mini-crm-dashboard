@@ -1,0 +1,38 @@
+🌐 Redux Dosyaları (customerSlice.js) → Server + Client Çalışır
+Redux slice dosyaları Next.js ile otomatik olarak hem sunucuda hem tarayıcıda çalıştırılır.
+
+O yüzden bu dosyalar Sunucu Taraflı Rendering (SSR) sırasında çalışır.
+
+Ama localStorage sadece tarayıcıda vardır, sunucuda yoktur.
+
+❌ use client burada kullanılamaz çünkü:
+customerSlice.js veya store.js dosyalarına use client yazarsan Redux çalışmaz, çünkü bu dosyalar React component değil.
+
+use client sadece component dosyalarında kullanılır.
+
+🚨 Sonuç: Redux slice dosyasına localStorage koyarsan…
+Durum	Ne Olur?
+Sunucu bunu çalıştırır	window is not defined hatası veya hydration error oluşur
+Tarayıcı çalıştırır	Sorun çıkmaz ama geç kalınmış olur
+
+✅ Çözüm:
+customerSlice.js içinde asla localStorage kullanma.
+
+Onun yerine CustomerList.js gibi 'use client' ile başlayan componentlerde:
+
+localStorage'dan veriyi ilk yüklemede al.
+
+Bu veriyi Redux'a dispatch ile gönder.
+
+Sonra Redux tüm işlemleri yönetmeye devam eder.
+
+🔁 Redux ne yapar?
+Redux aslında sadece bir JavaScript nesnesi içinde veri tutar. Yani:
+
+Sayfa yenilenirse: Redux sıfırlanır ❌
+
+Kalıcı veri saklamak istiyorsan: localStorage, sessionStorage, IndexedDB ya da backend API gerekir ✅
+
+Özetin Özeti:
+Redux SSR ile çalıştığı için localStorage gibi tarayıcıya özel şeyleri içinde kullanamayız.
+Bu yüzden localStorage işlemlerini sadece 'use client' yazılmış componentlerde yapmalıyız.
